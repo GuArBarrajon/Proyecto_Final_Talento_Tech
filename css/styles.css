@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+header{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #586680;
+    color: #fff;
+}
+
+.logo{
+    padding-right: 500px;
+}
+
+.logo__img{
+    font-size: 30px;
+    background-color: #586680;
+}
+
+.header__links{
+    display: flex;
+    width: 400px;
+    justify-content: space-around;
+}
+
+.menu{
+    background-color: #0e2249;
+    color: #fff;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1400px;
+    height: 50%;
+    margin: 0 auto;
+}
+
+.menu__links{
+    height: 100%;
+    transition: transform .5s;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu__item{
+    list-style: none;
+    height: 100%;
+    position: relative;
+
+    --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
+    --transform: rotate(-90deg);
+}
+
+.menu__item:hover{
+    --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    --transform: rotate(0deg);
+}
+
+.menu__link, .header__link, .footer__link{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 1s;
+}
+
+.menu__link:hover, .header__link:hover, .footer__link:hover, .boton:hover, .boton2:hover{
+    background-color: #3a4e77;
+    border-radius: 10px;
+    color: #f8b1c5;
+
+}
+
+.menu__nesting{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: max-content;
+    list-style: none;
+    background-color: #1e293f;
+    clip-path: var(--clip);
+    transition: clip-path .3s ease-in-out .3s;
+    transform: translateY(100%);
+}
+
+.menu__link--inside{
+    padding: 15px;
+}
+
+.menu__arrow{
+    transform: var(--transform);
+    transition: transform .5s;
+    display: block;
+    margin-left: 3px;
+}
+
+.menu__hamburger{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+
+}
+
+.menu__img{
+    display: block;
+    width: 36px;
+    cursor: pointer;
+    display: none;
+}
+
+.titulo{
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    padding: 1.25rem;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    color: #0e2249;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.contenedor__texto{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    color: #0e2249;
+    padding: 2rem;
+    border: #0e2249 solid 0.25rem;
+    border-radius: 10px;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+#form_inicio, #form_recupero {
+    width: 30%;
+}
+
+#form_registro {
+    width: 40%;
+}
+
+.producto{
+    background-color: #96a0b4;
+    text-align: center;
+    margin: 0 .5rem;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.imagen{
+    width: 40%;
+    border-radius: 50px;
+}
+
+footer{
+    color: #fff;
+    height: 100%;
+    padding: 30px 0 0 0;
+}
+
+.footer__1{
+    background-color: #0e2249;
+    width: 100%;
+}
+
+.footer__2{
+    background-color: #586680;
+    width: 100%;
+}
+
+.footer__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.boton{
+    height: 100%;
+    padding: 10px;
+    display: inline-block;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    transition: all 1s;
+}
+
+.boton2{
+    height: 100%;
+    padding: 10px;
+    display: inline-block;
+    align-items: center;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #0e2249;
+    transition: all 1s;
+}
+
+@media (max-width: 800px){
+    header{
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .logo{
+        font-size: 1rem;
+        padding-right: 50px;
+    }
+    
+    .logo__img{
+        display: none;
+    }
+    
+    .header__links{
+        width: 300px;
+        font-size: .7rem;
+        justify-content: space-between;
+    }
+
+    .menu__hamburger{
+        display: flex;
+    }
+    
+    .menu__item{
+        --clip: 0;
+        overflow: hidden;
+    }
+
+    .menu__item--active{
+        --transform: rotate(0);
+        --background: #3a4e77;
+    }
+
+    .menu__item--show{
+        background-color: var(--background);
+    }
+
+    .menu__links{
+        position: fixed;
+        top: 70px;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        max-width: 400px;
+        background-color: #1a202c;
+        display: grid;
+        grid-auto-rows: max-content;
+        overflow-y: auto;
+        transform: translateX(100%);
+    }
+
+    .menu__links--show{
+        transform: unset;
+        width: 100%;
+    }
+
+
+    .menu__link{
+        padding: 25px 0;
+        padding-left: 30px;
+        height: auto;
+    }
+
+    .menu__arrow{
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
+    .menu__nesting{
+        display: grid;
+        position: unset;
+        width: 100%;
+        height: 0;
+        transition: height .3s;
+        transform: translateY(0);
+    }
+
+    .menu__link--inside{
+        width: 90%;
+        margin-left: auto;
+        border-left: 1px solid #3a4e77;
+    }
+
+    .menu__img{
+        display: block;
+    }
+
+    .contenedor{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .producto{
+        margin: 1rem;
+    }
+
+    #form_registro{
+        width: 80%;
+    }
+
+    #form_inicio, #form_recupero{
+        width: 70%;
+    }
+}
