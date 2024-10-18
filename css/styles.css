@@ -145,7 +145,7 @@ header{
 }
 
 .titulo{
-    font-size: 2.5rem;
+    font-size: 2.5em;
     margin-top: 3rem;
     padding: 1.25rem;
     display: block;
@@ -153,6 +153,12 @@ header{
     text-align: center;
     color: #0e2249;
     text-shadow: 5px 5px 3px rgba(117, 117, 187, 0.727);
+}
+
+.titulo2{
+    font-size: 3.5em;
+    color: #d2d8e4;
+    text-shadow: 5px 5px 3px rgba(129, 129, 133, 0.727);
 }
 
 .contenedor{
@@ -175,6 +181,41 @@ header{
     border: #0e2249 solid 0.25rem;
     border-radius: 10px;
     box-shadow: 5px 5px 3px rgba(117, 117, 187, 0.727);
+}
+
+.invertir{
+    min-height: 100vh;
+    position: relative;
+}
+
+.banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    padding-top: 5%;
+    position: relative;
+    z-index: 2;
+}
+
+video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.capa{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(55, 52, 52, 0.4);
 }
 
 form{
@@ -207,6 +248,24 @@ input, textarea{
 .imagen{
     width: 90%;
     border-radius: 50px;
+    transition: all 1s;
+}
+
+.imagen:hover{
+    transform: scale(1.05);
+    box-shadow: #d2d8e4 5px 5px 5px;
+    transition: all 1s;
+}
+
+.contenedor__imagenes{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.video__iframe, #taller__img{
+    border-radius: 10px;
 }
 
 footer{
@@ -347,7 +406,6 @@ footer{
         width: 100%;
     }
 
-
     .menu__link{
         padding: 25px 0;
         padding-left: 30px;
@@ -385,6 +443,13 @@ footer{
 
     .producto{
         margin: 1rem;
+        border-radius: 20px;
+    }
+
+    .imagen{
+        width: 60%;
+        border-radius: 30px;
+        margin-bottom: 2em;
     }
 
     #form_registro, #taller {
