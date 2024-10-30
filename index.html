@@ -178,16 +178,16 @@
             </div>
             <div class="contenedor__grid">
                 <div class="contenedor__texto">
-                    <form id="form-reseña">
+                    <form id="form-reseña" action="https://formspree.io/f/xrbggzzq" method="POST">
                         <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" required>
+                        <input type="text" id="nombre" name="nombre" required>
             
                         <label for="producto">Producto:</label>
-                        <input type="text" id="producto" required>
+                        <input type="text" id="producto" name="producto" required>
             
                         <label for="calificacion">Calificación:</label>
-                        <select id="calificacion" required>
-                            <option value="5">⭐⭐⭐⭐⭐</option>
+                        <select id="calificacion" name="calificacion" required>
+                            <option value="5" selected>⭐⭐⭐⭐⭐</option>
                             <option value="4">⭐⭐⭐⭐</option>
                             <option value="3">⭐⭐⭐</option>
                             <option value="2">⭐⭐</option>
@@ -195,7 +195,7 @@
                         </select>
             
                         <label for="comentario">Comentario:</label>
-                        <textarea id="comentario" rows="4" required></textarea>
+                        <textarea id="comentario" rows="4" name="comentario" required></textarea>
             
                         <button type="submit" class="boton2">Enviar Reseña</button>
                     </form>    
