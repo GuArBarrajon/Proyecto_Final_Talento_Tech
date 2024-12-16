@@ -258,7 +258,10 @@ function verImagen(id) {
 // Cerrar modales
 function closeModal(idModal) {
     document.getElementById(idModal).style.display = 'none';
-    location.reload();
+    if (idModal !== 'modal-imagen') {
+        location.reload();
+    }
+    
 }
 
 //----------------------------------------------------
