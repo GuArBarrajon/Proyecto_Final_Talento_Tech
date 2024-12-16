@@ -27,6 +27,10 @@ header{
     color: #fff;
 }
 
+.hidden{
+    display: none;
+}
+
 .logo{
     padding-right: 500px;
     font-family: "Edu AU VIC WA NT Dots", cursive;
@@ -40,9 +44,12 @@ header{
 
 .header__links{
     display: flex;
-    width: 400px;
+    width: 30em;
     justify-content: space-around;
 }
+
+#cerrar_sesion{padding-top: 1.1em;}
+#carrito_compras{padding-bottom: 0.7em;}
 
 .menu{
     background: radial-gradient(#314467, #0e2249);
@@ -134,7 +141,7 @@ header{
     display: flex;
     align-items: center;
     padding: 0 15px;
-
+    pointer-events: auto;
 }
 
 .menu__img{
@@ -144,6 +151,27 @@ header{
     display: none;
 }
 
+#moneda, #carrito_compras{
+    background-color: transparent; 
+    border: none; 
+    padding-top: 1em;
+}
+
+.precio_oro{
+    background: radial-gradient(#314467, #0e2249);
+    color: white;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem;
+    font-size: 2em;
+    transition: all 1s;
+}
+
+.precio_oro:hover{
+    background: radial-gradient(#0e2249, #314467);
+    text-shadow: 5px 5px 3px rgba(117, 117, 187, 0.727);
+    transition: all 1s;
+}
 .titulo{
     font-size: 2.5em;
     margin-top: 3rem;
@@ -261,6 +289,7 @@ input, textarea{
 .imagen{
     width: 90%;
     border-radius: 50px;
+    cursor: pointer;
     transition: all 1s;
 }
 
@@ -329,13 +358,142 @@ footer{
     transition: all 1s;
 }
 
-@media (max-width: 1211px){
+.btn_eliminar{
+    width: 1.5em;
+}
+
+.btn3:hover{
+    background-color: #df0724;
+    color: #fff;
+    transition: all 1s;
+}
+
+/* Estilos del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%) ;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content {
+    background: radial-gradient(#f8f9fa, #c1d4ec);;
+    border: #0e2249 solid 0.25rem !important;
+    margin: 15% auto;
+    padding: 1.25em;
+    border: 0.0625em solid #888;
+    width: 60%;
+    border-radius: 0.625em;
+    max-width: 600px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modal-imagen-img{
+    width: 21.8em; 
+    border-radius: 1.5em;
+}
+
+#modal-descripcion{
+    color: #0e2249;
+    font-weight: 900;
+    padding: 1em;
+}
+
+#modal-pago{
+    z-index: 6;
+}
+
+.modal-content-pago{
+    overflow-y: scroll;
+    max-height: 70vh;
+}
+
+.close {
+    color: #1b1414;
+    float: right;
+    font-size: 38px;
+    font-weight: bold;
+    transition: all 1s;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(207, 16, 16);
+    transform: rotate(180deg);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.modal-content h2 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#carrito-lista li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+#carrito-lista li span {
+    flex: 1;
+    text-align: center;
+}
+
+#carrito-lista li {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual tamaño */
+    gap: 20px; /* Espacio entre los elementos */
+    padding: 20px; /* Espacio interno en el contenedor */
+}
+
+#boton-pagar {
+    width: 100%;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+
+#total-carrito {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: right;
+    width: 100%;
+}
+
+
+@media (max-width: 1250px){
     body{
         font-size: .9rem;
     }
 
     .logo{
-        padding-right: 300px;
+        padding-right: 250px;
+    }
+
+    #carrito_compras{
+        padding-top: 0.5em;
+        padding-bottom: auto;
     }
 }
 
@@ -343,8 +501,10 @@ footer{
     body{font-size: .8rem;} 
 
     .logo{
-        padding-right: 200px;
+        padding-right: 150px;
     }
+    .header__links{width: 33em;}
+
 }
 
 @media (max-width: 920px){
@@ -352,6 +512,11 @@ footer{
 
     .logo{
         padding-right: 100px;
+    }
+
+    #usuario_sesion{
+        padding-top: 1.5em;
+        font-size: 1.2em;
     }
 }
 
@@ -373,18 +538,28 @@ footer{
     }
     
     .header__links{
-        width: 300px;
-        font-size: .7rem;
+        width: 60%;
+        font-size: .5rem;
         justify-content: space-between;
     }
 
     .header__link{
-        padding: 2.5px 15px;
+        padding: 7px 15px;
     }
+
+    #usuario_sesion{
+        padding-top: 1.1em;
+        font-size: 1.5em;
+    }
+    #carrito_compras{padding-top: 0.2em;}
+
+    #moneda{padding-top: 0.5em;}
 
     .menu__hamburger{
         display: flex;
     }
+
+    .menu__nesting{background: transparent;}
     
     .menu__item{
         --clip: 0;
@@ -402,16 +577,22 @@ footer{
 
     .menu__links{
         position: fixed;
-        top: 70px;
+        top: 0px;
         bottom: 0;
         right: 0;
+        padding-top: 1em;
         width: 100%;
-        max-width: 400px;
-        background-color: #1a202c;
+        max-width: 300px;
+        background: radial-gradient(#314467, #0e2249);
         display: grid;
         grid-auto-rows: max-content;
         overflow-y: auto;
         transform: translateX(100%);
+    }
+
+    .menu__link:hover{
+        box-shadow: 1px 1px 3px rgba(233, 233, 240, 0.727);
+        border-radius: 15px;
     }
 
     .menu__links--show{
@@ -480,6 +661,6 @@ footer{
 }
 
 @media screen and (max-width: 500px){
-    .header__links{width: 250px;}
+    .header__links{width: 290px;}
     .logo{font-size: .8rem;}
 }

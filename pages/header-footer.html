@@ -1,0 +1,133 @@
+<header id="header1">
+    <img src="../assets/images/diamante.png" class="logo__img" alt="Logo_presentación" height="70px" width="70px">
+    <h1 class="logo">Gemas y joyas</h1>
+    <div class="header__links">
+        <a href="../pages/iniciarsesion.html" class="header__link">Ingresar</a>
+        <a href="../pages/registrarse.html" class="header__link">Registrarse</a>
+        <button  class="header__link" id="carrito_compras" title="Ver Carrito" onclick="mostrarCarrito()"><img src="../assets/icons/carrito.svg" alt="carrito"></button>
+        <button class="header__link" id="moneda" title="Tipo de Cambio" onclick="cambiarMoneda()">$</button>
+    </div>
+</header>
+
+<div id="header2">
+    <img src="../assets/images/diamante.png" class="logo__img" alt="Logo_presentación" height="70px" width="70px">
+    <h1 class="logo">Gemas y joyas</h1>
+    <div class="header__links"> 
+        <a class="header__link" id="usuario_sesion"></a>
+        <button class="header__link" id="cerrar_sesion" onclick="cerrarSesion()" style="background-color: transparent; border: none;">Cerrar Sesión</button>
+        <button class="header__link" id="carrito_compras" title="Ver Carrito" onclick="mostrarCarrito()"><span id="cantidad_carrito"></span><img src="../assets/icons/carrito.svg" alt="carrito"></button>
+        <button class="header__link" id="moneda" title="Tipo de Cambio" onclick="cambiarMoneda()">$</button>
+    </div>
+</div>
+
+<footer>
+    <section class="footer__1">
+        <div class="footer__container back__azul">
+            <div>
+                <h3>Contacto</h3>
+                <p><a href="https://wa.me/5491155555555" class="boton"><img src="../assets/icons/wsp.svg" alt="whatsapp">+54 9 11 5555-5555</a></p>
+                <p><a href="mailto:gemasyjoyas@example.com" class="boton"><img src="../assets/icons/mail.svg" alt="correo"> gemasyjoyas@example.com</a></p>
+            </div>
+            <div>
+                <h3>Redes Sociales</h3>
+                <a href="https://www.facebook.com/?locale=es_LA" target="_blank" title="Facebook" class="boton"><img src="../assets/icons/facebook.svg" alt="facebook"></a>
+                <a href="https://www.instagram.com" target="_blank" title="Instagram" class="boton"><img src="../assets/icons/instagram.svg" alt="instagram"></a>
+                <a href="https://x.com/?lang=es" target="_blank"  title="X" class="boton"><img src="../assets/icons/x.svg" alt="x"></a>
+            </div>
+            <div>
+                <h3>Dirección</h3>
+                <p>Cucha Cucha 123, Buenos Aires</p>
+            </div>
+        </div>
+
+        <div class="footer__container">
+            <li class="menu__item"><a href="../index.html" class="footer__link">Inicio</a></li>
+            <li class="menu__item"><a href="../pages/productos.html" class="footer__link">Productos</a></li>
+            <li class="menu__item"><a href="../pages/relojes.html" class="footer__link">Relojes</a></li>
+            <li class="menu__item"><a href="../pages/lingotes.html" class="footer__link">Lingotes</a></li>
+            <li class="menu__item"><a href="../pages/alianzas.html" class="footer__link">Alianzas</a></li> 
+            <li class="menu__item"><a href="../pages/anillos.html" class="footer__link">Anillos</a></li>
+            <li class="menu__item"><a href="../pages/collares.html" class="footer__link">Collares/Cadenas</a></li>
+            <li class="menu__item"><a href="../pages/pulseras.html" class="footer__link">Pulseras</a></li>
+            <li class="menu__item"><a href="../pages/aros.html" class="footer__link">Aros</a></li>
+            <li class="menu__item"><a href="../pages/prendedores.html" class="footer__link">Prendedores</a></li>
+            <li class="menu__item"><a href="../pages/gemelos.html" class="footer__link">Gemelos</a></li>
+            <li class="menu__item"><a href="../pages/servicios.html" class="footer__link">Servicios</a></li>
+            <li class="menu__item"><a href="../pages/mediosdepago.html" class="footer__link">Medios de Pago</a></li>
+        </div>
+    </section>
+    <section class="footer__2">
+        <div class="footer__container">
+            <h4>Copyright © 2024 Gemas y Joyas. Todos los derechos reservados.</h4>
+            <p>El uso de este sitio web implica la aceptación de los Términos y Condiciones y de las Políticas de Privacidad de la empresa.
+                Las fotos son a modo ilustrativo. La venta de cualquiera de los productos publicados está sujeta a la verificación de stock. Precios sujeto a cambios sin previo aviso.</p>
+        </div>
+    </section>
+</footer>
+
+<!-- Modales -->
+<section id="modales">
+        <!-- Modal de imagen -->
+        <div id="modal-imagen" class="modal">
+            <div class="modal-content">
+                <div>
+                    <span class="close" onclick="closeModal('modal-imagen')" title="Cerrar">×</span>
+                </div>
+                <img id="modal-imagen-img" src="" alt="Producto" />
+                <p id="modal-descripcion"></p>
+            </div>
+        </div>
+    
+        <!-- Modal del carrito -->
+        <div id="modal-carrito" class="modal">
+            <div class="modal-content">
+                <div>
+                    <span class="close" onclick="closeModal('modal-carrito')" title="Cerrar">×</span>
+                </div>
+                <h2>Carrito</h2>
+                <ol id="carrito-lista"></ol>
+                <p>Total: <span id="total-carrito">0</span></p>
+                <button class="boton2" onclick="realizarCompra()" id="boton-pagar">Realizar compra</button>
+            </div>
+        </div>
+
+
+        <!-- Modal envío y tarjeta -->
+    <div id="modal-pago" class="modal">
+        <div class="modal-content modal-content-pago">
+            <span class="close" id="closeModalBtn" onclick="closeModal('modal-pago')">&times;</span>
+            
+            <form id="paymentForm">
+                <h2>Datos de Envío</h2>
+                <label for="name">Nombre completo</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="address">Dirección</label>
+                <input type="text" id="address" name="address" required>
+                
+                <label for="city">Ciudad</label>
+                <input type="text" id="city" name="city" required>
+                
+                <label for="state">Provincia</label>
+                <input type="text" id="state" name="state" required>
+                
+                <label for="zipcode">Código Postal</label>
+                <input type="text" id="zipcode" name="zipcode" required><hr>
+                
+                <h2>Datos de la Tarjeta de Crédito</h2>
+                <label for="cardNumber">Número de tarjeta</label>
+                <input type="text" id="cardNumber" name="cardNumber" required pattern="\d{16}" title="16 dígitos">
+
+                <label for="expiryDate">Fecha de vencimiento</label>
+                <input type="month" id="expiryDate" name="expiryDate" required>
+
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" required pattern="\d{3}" title="3 dígitos"><hr>
+
+                <h3>Total: <span id="totalCompra"></span></h3>
+
+                <button class="boton2" type="submit" id="btnPagar" >Pagar</button>
+            </form>
+        </div>
+    </div>
+</section>
