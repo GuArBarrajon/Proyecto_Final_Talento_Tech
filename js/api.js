@@ -26,8 +26,8 @@ function consultarApiUnaVezAlDia() {
 function consultaApi() {
 
     //URL de la API y la clave de acceso
-    const apiUrl = 'https://www.goldapi.io/api/XAU/US'; 
-    const apiKey = 'goldapi-11fc38sm4l5hj4o-io';
+    const apiUrl = 'https://www.goldapi.io/api/XAU/USD'; 
+    const apiKey = 'goldapi-3euodsm4qsksvv-io';
 
     //solicitud a la API de la cotización del oro
     fetch(apiUrl, {
