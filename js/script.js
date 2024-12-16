@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', cargarHeaderFooter);
     
         window.addEventListener('resize', () => {
             if(window.innerWidth > 800) {
-                deleteStyleHeight(); 
+                //deleteStyleHeight(); 
                 if(list.classList.contains('menu__links--show')) {
                     list.classList.remove('menu__links--show');
                 }
