@@ -1,0 +1,32 @@
+[
+    {
+        "nombre": "María G.",
+        "producto": "Anillo Oro 18k",
+        "calificacion": 5,
+        "comentario": "Me encantó el anillo que compré, ¡es aún más bonito en persona!"
+    },
+    {
+        "nombre": "Juan P.",
+        "producto": "Pulsera de brillantes",
+        "calificacion": 4,
+        "comentario": "Excelente servicio y entrega rápida. La pulsera es hermosa, aunque un poco más cara de lo esperado."
+    },
+    {
+        "nombre": "Ana L.",
+        "producto": "Aros Oro 18k",
+        "calificacion": 5,
+        "comentario": "La calidad de las joyas es impresionante. Sin duda volveré a comprar."
+    },
+    {
+        "nombre": "Carlos R.",
+        "producto": "Anillo plata 950",
+        "calificacion": 3,
+        "comentario": "Bonitas joyas, pero el envío tardó más de lo que esperaba."
+    },
+    {
+        "nombre": "Elena M.",
+        "producto": "Collar y dije Oro 18k",
+        "calificacion": 5,
+        "comentario": "Un excelente regalo para mi madre. ¡Le encantó!"
+    }
+]

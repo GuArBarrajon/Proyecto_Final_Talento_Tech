@@ -1,8 +1,8 @@
-// Obtener el formulario de registro 
+// Obtener el formulario de registro
 const formulario = document.getElementById('registroForm');
 
 // Función para manejar el registro de usuarios
-formulario.addEventListener('submit', function (event) {
+formulario.addEventListener('submit', async function (event) {
     event.preventDefault();
 
     // Obtener los datos del formulario
@@ -23,32 +23,38 @@ formulario.addEventListener('submit', function (event) {
         return;
     }
 
-    // Verificar si el correo ya existe
-    const usuarioExistente = usuarios.find(user => user.email === email);
-    if (usuarioExistente) {
-        Swal.fire({text: 'Este correo electrónico ya está registrado.', icon: 'error'});
-        return;
+    try {
+        // Carga los usuarios desde el archivo JSON
+        const usuarios = await cargarJson('../data/usuarios.json');
+
+        // Verifica si el correo ya existe
+        const usuarioExistente = usuarios.find(user => user.email === email);
+        if (usuarioExistente) {
+            Swal.fire({text: 'Este correo electrónico ya está registrado.', icon: 'error'});
+            return;
+        }
+
+        // Crear el nuevo usuario
+        let usuario = {
+            id: usuarios.length + 1, // Generamos un nuevo ID, basado en la longitud del array
+            nombre,
+            apellido,
+            email,
+            contrasena
+        };
+
+        // Guardamos el usuario en el sessionStorage para simular el inicio de sesión
+        localStorage.setItem('usuario', JSON.stringify(usuario));
+
+        // Muestra mensaje de éxito y simula el inicio de sesión
+        Swal.fire({text: '¡Registro exitoso! Ha iniciado sesión automáticamente.', icon: 'success'});
+
+        setTimeout(() => {
+            window.location.href = "../index.html"; // Redirigir a la página principal
+        }, 2000);
+    } catch (error) {
+        console.error('Error al cargar los usuarios:', error);
+        Swal.fire({text: 'Hubo un problema al cargar los datos. Intenta nuevamente.', icon: 'error'});
     }
-
-    // Crea el usuario
-    let usuario = {
-        nombre,
-        apellido,
-        email,
-        contrasena
-    };
-
-    // Guarda el usuario en el array de usuarios
-    usuarios.push(usuario);
-
-    // Guardr el usuario en el sessionStorage y simula inicio de sesión
-    localStorage.setItem('usuario', JSON.stringify(usuario));
-
-    // Muestra mensaje de éxito y inicia sesión (por ahora que no hay base de datos, 
-    //de lo contrario se enviaría mail de confirmación para activar la cuenta)
-    Swal.fire({text: '¡Registro exitoso! Ha iniciado sesión automáticamente.', icon: 'success'});
-
-    setTimeout(() => {
-        window.location.href = "../index.html"; // Redirigir a la página principal
-    }, 2000);
 });
+

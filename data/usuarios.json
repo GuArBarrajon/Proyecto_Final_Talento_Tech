@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "nombre": "Gustavo",
+        "apellido": "Barrajón",
+        "email": "admin@admin.com",
+        "contrasena": "12345678"
+    },
+    {
+        "id": 2,
+        "nombre": "Roberto",
+        "apellido": "Pérez",
+        "email": "rperez@gmail.com",
+        "contrasena": "12345678"
+    },
+    {
+        "id": 3,
+        "nombre": "Ana",
+        "apellido": "Gómez",
+        "email": "ana.gomez@example.com",
+        "contrasena": "12345678"
+    },
+    {
+        "id": 4,
+        "nombre": "Luis",
+        "apellido": "Fernández",
+        "email": "luis.fernandez@example.com",
+        "contrasena": "12345678"
+    },
+    {
+        "id": 5,
+        "nombre": "Carlos",
+        "apellido": "Ramírez",
+        "email": "carlos.ramirez@example.com",
+        "contrasena": "12345678"
+    },
+    {
+        "id": 6,
+        "nombre": "Marta",
+        "apellido": "Martínez",
+        "email": "marta.martinez@example.com",
+        "contrasena": "12345678"
+    },
+    {
+        "id": 7,
+        "nombre": "David",
+        "apellido": "Sánchez",
+        "email": "david.sanchez@example.com",
+        "contrasena": "12345678"
+    },
+    {
+        "id": 8,
+        "nombre": "Paola",
+        "apellido": "López",
+        "email": "paola.lopez@example.com",
+        "contrasena": "12345678"
+    },
+    {
+        "id": 9,
+        "nombre": "Javier",
+        "apellido": "Hernández",
+        "email": "javier.hernandez@example.com",
+        "contrasena": "12345678"
+    },
+    {
+        "id": 10,
+        "nombre": "Elena",
+        "apellido": "Díaz",
+        "email": "elena.diaz@example.com",
+        "contrasena": "12345678"
+    },
+    {
+        "id": 11,
+        "nombre": "Pablo",
+        "apellido": "García",
+        "email": "pablo.garcia@example.com",
+        "contrasena": "12345678"
+    },
+    {
+        "id": 12,
+        "nombre": "Isabel",
+        "apellido": "Álvarez",
+        "email": "isabel.alvarez@example.com",
+        "contrasena": "12345678"
+    },
+    {
+        "id": 13,
+        "nombre": "Juan",
+        "apellido": "Vázquez",
+        "email": "juan.vazquez@example.com",
+        "contrasena": "12345678"
+    },
+    {
+        "id": 14,
+        "nombre": "Ricardo",
+        "apellido": "Jiménez",
+        "email": "ricardo.jimenez@example.com",
+        "contrasena": "12345678"
+    }
+]
